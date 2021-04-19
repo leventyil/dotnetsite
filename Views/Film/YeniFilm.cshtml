@@ -1,0 +1,33 @@
+﻿@model moviesite.Models.Film
+@{
+    ViewData["Title"] = "YeniFilm";
+    Layout = "~/Views/Shared/_Sidebar.cshtml";
+}
+
+<br/>
+
+<div class="col-4">
+    <form class="form-group" method="post">
+        <label>Movie Title</label>
+        @Html.TextBoxFor(x => x.FilmName, new { @class = "form-control", placeholder = "Movie Title" })
+        @Html.ValidationMessageFor(x => x.FilmName, "", new { @style = "color:red" })
+        <br />
+        <label>Year</label>
+        @Html.TextBoxFor(x => x.FilmYear, new { @class = "form-control", placeholder = "Year" })
+        @Html.ValidationMessageFor(x => x.FilmYear, "", new { @style = "color:red" })
+        <br />
+        <label>Length (minutes)</label>
+        @Html.TextBoxFor(x => x.FilmLength, new { @class = "form-control", placeholder = "Length (minutes)" })
+        @Html.ValidationMessageFor(x => x.FilmLength, "", new { @style = "color:red" })
+        <br />
+        <label>IMDb Score</label>
+        @Html.TextBoxFor(x => x.FilmScore, new { @class = "form-control", placeholder = "IMDb Score" })
+        @Html.ValidationMessageFor(x => x.FilmScore, "", new { @style = "color:red" })
+        <br />
+        <label>Metascore Score</label>
+        @Html.TextBoxFor(x => x.FilmScoreTwo, new { @class = "form-control", placeholder = "Metascore Score" })
+        @Html.ValidationMessageFor(x => x.FilmScoreTwo, "", new { @style = "color:red" })
+        <br />
+        <button class="btn btn-info">Add Entry</button>
+    </form>
+</div>

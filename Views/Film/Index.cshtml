@@ -1,0 +1,86 @@
+﻿@model PaginatedList<moviesite.Models.Film> 
+@using X.PagedList.Mvc
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@{
+    ViewData["Title"] = "Filmler";
+    Layout = "~/Views/Shared/_Sidebar.cshtml";
+}
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/js/site.js"></script>
+
+
+<div class="col-6">
+    <a href="/Film/YeniFilm" class="btn btn-primary">New Entry</a>
+    <form method="get" asp-action="Index" style="margin-top: 10px">
+        <div class="form-action no-color">
+            <p>
+                Name @Html.TextBox("searchString") Year @Html.TextBox("searchYear") <button type="submit" class="btn btn-primary">Search</button> <a asp-action="Index" class="btn btn-dark">Back to the full list</a>
+            </p>
+        </div>
+    </form>
+    <div class="dropdown">
+        <button  onclick="myFunction()" class="dropbtn">Sort</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
+            <a asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
+            <a asp-action="Index" asp-route-sortOrder=@ViewBag.LengthSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by length </a>
+            <a asp-action="Index" asp-route-sortOrder=@ViewBag.ScoreSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by IMDb Score </a>
+            <a asp-action="Index" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
+        </div>
+    </div>
+
+</div>
+
+
+    <div class="col-12">
+        <table class="table table-bordered" style="margin-top: 15px">
+            <thead>
+                <tr>
+                    <th>Movie Title</th>
+                    <th>Year</th>
+                    <th>Length (minutes)</th>
+                    <th>IMDb Score</th>
+                    <th>Metascore Score</th>
+                    <th>...</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.FilmName</td>
+                        <td>@x.FilmYear</td>
+                        <td>@x.FilmLength</td>
+                        <td>@x.FilmScore</td>
+                        <td>@x.FilmScoreTwo</td>
+                        <td><a href="/Film/FilmGetir/@x.id" class="btn btn-success">Update</a>  @Html.ActionLink("Delete", "FilmSil", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Emin misiniz?')" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        @{
+            var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.NextPage ? "disabled" : "";
+        }
+
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
+
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary">First</a>
+
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
+
+        <button class="btn btn-primary">Sayfa: @Model.PageIndex</button>
+
+    </div>
+
+
+
+
+
+
+
+

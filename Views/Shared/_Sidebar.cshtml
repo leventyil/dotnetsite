@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<title>MyMovieList</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/sidebar.css" rel="stylesheet" />
+
+<div class="sidebar-container">
+    <div class="sidebar-logo">
+        MyMovieList
+    </div>
+    <ul class="sidebar-navigation">
+        <li class="header">Menu</li>
+        <li>
+            <a href="/Home/Index">
+                <i class="fa fa-home" aria-hidden="true"></i> Homepage
+            </a>
+        </li>
+        <li>
+            <a href="/Film/Index">
+                <i class="fa fa-tachometer" aria-hidden="true"></i> Movies
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="content-container">
+
+    <div class="container-fluid">
+
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            @RenderBody()
+        </div>
+
+    </div>
+</div>
+

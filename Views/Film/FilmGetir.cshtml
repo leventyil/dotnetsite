@@ -1,0 +1,41 @@
+﻿@model moviesite.Models.Film
+
+@{
+    ViewData["Title"] = "FilmGetir";
+    Layout = "~/Views/Shared/_Sidebar.cshtml";
+}
+
+
+
+@using (Html.BeginForm("FilmGuncelle", "Film", FormMethod.Post))
+{
+    <div class="col-4">
+        <form class="form-group" method="post">
+            <label>ID</label>
+            @Html.TextBoxFor(x => x.id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmName, "", new { @style = "color:red" })
+            <br />
+            <label>Movie Title</label>
+            @Html.TextBoxFor(x => x.FilmName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmName, "", new { @style = "color:red" })
+            <br />
+            <label>Year</label>
+            @Html.TextBoxFor(x => x.FilmYear, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmYear, "", new { @style = "color:red" })
+            <br />
+            <label>Length (minutes)</label>
+            @Html.TextBoxFor(x => x.FilmLength, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmLength, "", new { @style = "color:red" })
+            <br />
+            <label>IMDb Score</label>
+            @Html.TextBoxFor(x => x.FilmScore, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmScore, "", new { @style = "color:red" })
+            <br />
+            <label>Metascore Score</label>
+            @Html.TextBoxFor(x => x.FilmScoreTwo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FilmScoreTwo, "", new { @style = "color:red" })
+            <br />
+            <button class="btn btn-success">Update</button>
+        </form>
+    </div>
+}
