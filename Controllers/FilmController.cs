@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using moviesite.Models;
@@ -10,16 +11,19 @@ using X.PagedList;
 
 namespace moviesite.Controllers
 {
+    [Authorize]
     public class FilmController : Controller
     {
         private readonly AppDbContext c;
-
+        
         public FilmController(AppDbContext c)
         {
             this.c = c;
         }
 
         [HttpGet]
+        [AllowAnonymous]
+
         public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int searchYear, int? pageNumber, int pageSize = 10)
         {
 
@@ -52,48 +56,25 @@ namespace moviesite.Controllers
                 query = query.Where(x => x.FilmYear == searchYear);
             }
 
-            switch (sortOrder)
+            query = sortOrder switch
             {
-                case "name_desc":
-                    query = query.OrderByDescending(x => x.FilmName);
-                    break;
-                case "year_asc":
-                    query = query.OrderBy(x => x.FilmYear);
-                    break;
-                case "year":
-                    query = query.OrderByDescending(x => x.FilmYear);
-                    break;
-                case "length_asc":
-                    query = query.OrderBy(x => x.FilmLength);
-                    break;
-                case "length":
-                    query = query.OrderByDescending(x => x.FilmLength);
-                    break;
-                case "score_asc":
-                    query = query.OrderBy(x => x.FilmScore);
-                    break;
-                case "score":
-                    query = query.OrderByDescending(x => x.FilmScore);
-                    break;
-                case "score1_asc":
-                    query = query.OrderBy(x => x.FilmScoreTwo);
-                    break;
-                case "score1":
-                    query = query.OrderByDescending(x => x.FilmScoreTwo);
-                    break;
-                default:
-                    query = query.OrderBy(x => x.FilmName);
-                    break;
-            }
-
-
-
+                "name_desc" => query.OrderByDescending(x => x.FilmName),
+                "year_asc" => query.OrderBy(x => x.FilmYear),
+                "year" => query.OrderByDescending(x => x.FilmYear),
+                "length_asc" => query.OrderBy(x => x.FilmLength),
+                "length" => query.OrderByDescending(x => x.FilmLength),
+                "score_asc" => query.OrderBy(x => x.FilmScore),
+                "score" => query.OrderByDescending(x => x.FilmScore),
+                "score1_asc" => query.OrderBy(x => x.FilmScoreTwo),
+                "score1" => query.OrderByDescending(x => x.FilmScoreTwo),
+                _ => query.OrderBy(x => x.FilmName),
+            };
             return View(await PaginatedList<Film>.CreateAsync(query.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
 
 
-
+        
         public IActionResult Search(string searchName, int searchYear)
         {
             var query = from x in c.TBLMOVIES select x;
@@ -109,6 +90,7 @@ namespace moviesite.Controllers
             return View(query);
         }
 
+        
         public IActionResult FilmSil(int id)
         {
             var film = c.TBLMOVIES.Find(id);
@@ -123,6 +105,7 @@ namespace moviesite.Controllers
             return View("FilmGetir", film);
         }
 
+        
         public IActionResult FilmGuncelle(Film f)
         {
             var film = c.TBLMOVIES.Find(f.id);
@@ -136,12 +119,14 @@ namespace moviesite.Controllers
         }
 
         [HttpGet]
+        
         public IActionResult YeniFilm()
         {
             return View();
         }
 
         [HttpPost]
+        
         public IActionResult YeniFilm(Film f)
         {
             if (!ModelState.IsValid)

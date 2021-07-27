@@ -171,7 +171,6 @@ C:\Users\leven\source\repos\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesit
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\libman.json
-C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\moviesite.exe
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\moviesite.deps.json
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\moviesite.runtimeconfig.json
@@ -294,7 +293,6 @@ C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\tr\Microsoft.C
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.csprojAssemblyReference.cache
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.AssemblyInfoInputs.cache
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.AssemblyInfo.cs
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.RazorAssemblyInfo.cache
@@ -341,3 +339,17 @@ C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\Microsoft.Exte
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.csproj.CoreCompileInputs.cache
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\moviesite.csproj.AssemblyReference.cache
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\scopedcss\bundle\moviesite.styles.css
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Projects\leventyil\moviesite\moviesite\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs
+C:\Projects\leventyil\moviesite\moviesite\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditRole.cshtml.g.cs

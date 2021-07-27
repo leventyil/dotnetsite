@@ -13,13 +13,13 @@ namespace moviesite.Controllers
 {
     public class HomeController : Controller
     {
-        
-        
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Filmler()
         {
             return View();
