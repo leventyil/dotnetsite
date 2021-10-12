@@ -15,13 +15,17 @@
     <a href="/Film/YeniFilm" class="btn btn-primary">New Entry</a>
     <form method="get" asp-action="Index" style="margin-top: 10px">
         <div class="form-action no-color">
-            <p>
-                Name @Html.TextBox("searchString") Year @Html.TextBox("searchYear") <button type="submit" class="btn btn-primary">Search</button> <a asp-action="Index" class="btn btn-dark">Back to the full list</a>
-            </p>
+            <div class="col-5">
+                Name @Html.TextBox("searchString", "", new { @class = "form-control" }) Year @Html.TextBox("searchYear", "", new { @class = "form-control" })
+                <br />
+                <button type="submit" class="btn btn-primary">Search</button>
+                <a asp-action="Index" class="btn btn-dark">Back to the full list</a>                
+            </div>
         </div>
     </form>
     <div class="dropdown">
-        <button  onclick="myFunction()" class="dropbtn">Sort</button>
+        <br />
+        <button onclick="myFunction()" class="dropbtn">Sort</button>
         <div id="myDropdown" class="dropdown-content">
             <a asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
             <a asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>

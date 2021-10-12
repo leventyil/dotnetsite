@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\leventyil\\moviesite\\moviesite\\moviesite.csproj": {}
+    "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\leventyil\\moviesite\\moviesite\\moviesite.csproj": {
+    "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\leventyil\\moviesite\\moviesite\\moviesite.csproj",
+        "projectUniqueName": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj",
         "projectName": "moviesite",
-        "projectPath": "C:\\Projects\\leventyil\\moviesite\\moviesite\\moviesite.csproj",
+        "projectPath": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj",
         "packagesPath": "C:\\Users\\leven\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\leventyil\\moviesite\\moviesite\\obj\\",
+        "outputPath": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -123,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

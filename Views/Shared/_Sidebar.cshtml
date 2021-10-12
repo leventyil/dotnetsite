@@ -26,13 +26,18 @@
                 <i class="fa fa-tachometer" aria-hidden="true"></i> Movies
             </a>
         </li>
+        <li>
+            <a href="/Administration/ListRoles">
+                <i class="fa fa-tachometer" aria-hidden="true"></i> List Roles
+            </a>
+        </li>
         @if (SignInManager.IsSignedIn(User))
         {
             <li class="nav-item">
-                <form method="post" asp-controller="account" asp-action="logout">
-                    <button type="submit" class="nav-link btn btn-link py-0">
-                        Logout
-                    </button>
+                <form id="logout" method="post" asp-controller="account" asp-action="logout">
+                    <a href="javascript:;" onclick="document.getElementById('logout').submit()">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i> Logout
+                    </a>
                 </form>
             </li>
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TgM4RSIBkD/hZSqPujaBywpfvl0W2ga5R44+qqb17XDMK1hN0H+D9YOUTAtKiSstej5IT8ETyfl5MhMjdLPSiQ==",
+  "dgSpecHash": "KqMG0pDeeUanBC1x3mmnZ7IoP37pp7CTY3gXOTAN9Jl/0FS3Xbucz9FaD1gmWFpdIeVYVbmiOMhUAe8L7iPSNQ==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\leventyil\\moviesite\\moviesite\\moviesite.csproj",
+  "projectFilePath": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leven\\.nuget\\packages\\bootstrap\\5.0.2\\bootstrap.5.0.2.nupkg.sha512",
     "C:\\Users\\leven\\.nuget\\packages\\datatables.net\\1.10.24\\datatables.net.1.10.24.nupkg.sha512",
