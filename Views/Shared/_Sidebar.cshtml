@@ -12,7 +12,7 @@
 
 <div class="sidebar-container">
     <div class="sidebar-logo">
-        MyMovieList
+        Moviebase
     </div>
     <ul class="sidebar-navigation">
         <li class="header">Menu</li>
@@ -26,13 +26,21 @@
                 <i class="fa fa-tachometer" aria-hidden="true"></i> Movies
             </a>
         </li>
-        <li>
-            <a href="/Administration/ListRoles">
-                <i class="fa fa-tachometer" aria-hidden="true"></i> List Roles
-            </a>
-        </li>
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <li>
+                <a href="/Administration/ListRoles">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> List Roles
+                </a>
+            </li>
+        }
         @if (SignInManager.IsSignedIn(User))
         {
+            <li>
+                <a href="/Account/Profile">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Profile
+                </a>
+            </li>
             <li class="nav-item">
                 <form id="logout" method="post" asp-controller="account" asp-action="logout">
                     <a href="javascript:;" onclick="document.getElementById('logout').submit()">
@@ -45,12 +53,12 @@
         {
             <li class="nav-item">
                 <a class="nav-link" asp-controller="account" asp-action="register">
-                    Register
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Register
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" asp-controller="account" asp-action="login">
-                    Login
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> Login
                 </a>
             </li>
         }

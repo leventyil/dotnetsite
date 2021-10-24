@@ -2,9 +2,17 @@
     ViewData["Title"] = "Anasayfa";
     Layout = "~/Views/Shared/_Sidebar.cshtml";
 }
+@inject SignInManager<IdentityUser> SignInManager;
 
 <div>
     <h1>//Homepage//</h1>
-    <h2>Welcome!</h2>
-    </div>
-        
+    
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h2>Welcome!</h2>
+    }
+    else
+    {
+        <h2>Welcome! Please <a asp-controller="account" asp-action="login">Login</a> or <a asp-controller="account" asp-action="register">Register</a>.</h2>
+    }
+</div>

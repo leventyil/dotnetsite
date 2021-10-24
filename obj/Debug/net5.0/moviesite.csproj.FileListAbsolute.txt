@@ -350,3 +350,6 @@ C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\moviesite.dll
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\ref\moviesite.dll
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\moviesite.pdb
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\moviesite.genruntimeconfig.cache
+C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs
+C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Account\Profile.cshtml.g.cs
+C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
