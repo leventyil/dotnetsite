@@ -353,3 +353,4 @@ C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\moviesite.genruntime
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Account\Profile.cshtml.g.cs
 C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\leven\Documents\GitHub\dotnetsite\obj\Debug\net5.0\Razor\Views\Administration\ListUsers.cshtml.g.cs
