@@ -21,7 +21,7 @@
     }
     <form method="get" asp-action="Index">
         <div class="form-action no-color">
-            <div class="col-5">
+            <div class="col-6">
                 Search by Name @Html.TextBox("searchString", "", new { @class = "form-control" }) Search by Year @Html.TextBox("searchYear", "", new { @class = "form-control" })
                 <br />
                 <button type="submit" class="btn btn-primary">Search</button>
@@ -29,9 +29,10 @@
             </div>
         </div>
     </form>
+
     <div class="dropdown">
         <br />
-        <button onclick="myFunction()" class="dropbtn">Sort</button>
+        <button onclick="myFunction()" class="dropbtn" style="margin-right: 5px">Sort</button>
         <div id="myDropdown" class="dropdown-content">
             <a asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
             <a asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
@@ -40,6 +41,19 @@
             <a asp-action="Index" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
         </div>
     </div>
+      
+    @{
+        var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.NextPage ? "disabled" : "";
+    }
+
+    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
+
+    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-dark">First</a>
+
+    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
+
+    <button class="btn btn-primary">Sayfa: @Model.PageIndex</button>
 
 </div>
 
@@ -68,8 +82,8 @@
                     <td>
                         @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
-                            <a href="/Film/FilmGetir/@x.id" class="btn btn-success">Update</a>
-                            @Html.ActionLink("Delete", "FilmSil", new { id = x.id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?')" })
+                            <a href="/Film/FilmGetir/@x.Id" class="btn btn-success">Update</a>
+                            @Html.ActionLink("Delete", "FilmSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?')" })
                         }
                     </td>
                 </tr>
@@ -78,18 +92,7 @@
     </table>
 
 
-    @{
-        var prevDisabled = !Model.PreviousPage ? "disabled" : "";
-        var nextDisabled = !Model.NextPage ? "disabled" : "";
-    }
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary">First</a>
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
-
-    <button class="btn btn-primary">Sayfa: @Model.PageIndex</button>
+    
 
 </div>
 

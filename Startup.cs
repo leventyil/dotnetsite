@@ -37,7 +37,7 @@ namespace moviesite
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
 
-            var connection = @"Server=LEVENT-PC\SQLEXPRESS;Database=moviesiteDB;Trusted_Connection=True;MultipleActiveResultSets=True;";
+            var connection = @"Server=LEVENT-PC\;Database=moviebaseDB;Trusted_Connection=True;MultipleActiveResultSets=True;";
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
  
 

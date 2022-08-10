@@ -108,7 +108,7 @@ namespace moviesite.Controllers
         
         public IActionResult FilmGuncelle(Film f)
         {
-            var film = c.TBLMOVIES.Find(f.id);
+            var film = c.TBLMOVIES.Find(f.Id);
             film.FilmName = f.FilmName;
             film.FilmYear = f.FilmYear;
             film.FilmLength = f.FilmLength;

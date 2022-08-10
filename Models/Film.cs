@@ -6,7 +6,7 @@ namespace moviesite.Models
     public class Film
     {
         [Key]
-        public int id { get; set; }
+        public string Id { get; set; }
         [Required(ErrorMessage = "İsim boş Bırakılamaz.")]
         public string FilmName { get; set; }
 
@@ -17,7 +17,7 @@ namespace moviesite.Models
         public int FilmLength { get; set; }
 
         [Required(ErrorMessage = "IMDb Score boş Bırakılamaz.")]
-        public float FilmScore { get; set; }
+        public string FilmScore { get; set; }
 
         [Required(ErrorMessage = "Metascore Score boş Bırakılamaz.")]
         public int FilmScoreTwo { get; set; }

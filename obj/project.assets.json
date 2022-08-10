@@ -8809,25 +8809,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leven\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\leven\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj",
+      "projectUniqueName": "C:\\Projects\\DOTNET\\moviebase\\moviesite.csproj",
       "projectName": "moviesite",
-      "projectPath": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\moviesite.csproj",
+      "projectPath": "C:\\Projects\\DOTNET\\moviebase\\moviesite.csproj",
       "packagesPath": "C:\\Users\\leven\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leven\\Documents\\GitHub\\dotnetsite\\obj\\",
+      "outputPath": "C:\\Projects\\DOTNET\\moviebase\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\leven\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8931,7 +8926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
