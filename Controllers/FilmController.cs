@@ -91,7 +91,7 @@ namespace moviesite.Controllers
         }
 
         
-        public IActionResult FilmSil(int id)
+        public IActionResult FilmSil(string id)
         {
             var film = c.TBLMOVIES.Find(id);
             c.TBLMOVIES.Remove(film);
@@ -99,7 +99,7 @@ namespace moviesite.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult FilmGetir(int id)
+        public IActionResult FilmGetir(string id)
         {
             var film = c.TBLMOVIES.Find(id);
             return View("FilmGetir", film);
