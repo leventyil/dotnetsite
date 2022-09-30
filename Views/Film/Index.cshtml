@@ -5,55 +5,58 @@
 @using X.PagedList.Mvc.Core
 
 @{
-    ViewData["Title"] = "Filmler";
+    ViewData["Title"] = "Movies";
     Layout = "~/Views/Shared/_Sidebar.cshtml";
 }
 <link href="~/css/site.css" rel="stylesheet" />
 <script src="~/js/site.js"></script>
 
 
-<div class="col-6">
-    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-    {
-        <div style="margin-bottom: 10px">
-            <a href="/Film/YeniFilm" class="btn btn-primary">New Entry</a>
-        </div>   
-    }
-    <form method="get" asp-action="Index">
-        <div class="form-action no-color">
-            <div class="col-6">
-                Search by Name @Html.TextBox("searchString", "", new { @class = "form-control" }) Search by Year @Html.TextBox("searchYear", "", new { @class = "form-control" })
-                <br />
-                <button type="submit" class="btn btn-primary">Search</button>
-                <a asp-action="Index" class="btn btn-dark">Back to the full list</a>
+<div class="col-12">
+ 
+    <div class="row">
+        <div class="col-4">
+            <div>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="btn btn-info dropdown-toggle" style="margin-right: 5px">Sort</button>
+                    <div id="myDropdown" class="dropdown-menu">
+                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.LengthSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by length </a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.ScoreSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by IMDb Score </a>
+                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
+                    </div>
+                </div>          
+
+                @{
+                    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.NextPage ? "disabled" : "";
+                }
+            
+                <button class="btn btn-primary">Page: @Model.PageIndex</button>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-dark">First</a>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>         
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
             </div>
+        </div>      
+
+        <div class="col-7">
+            <form method="get" asp-action="Index">               
+                <div style="float:left"><input id="searchString" name="searchString" type="text" placeholder="Search by Name" class="form-control"></div>
+                <div style="float:left"><input id="searchYear" name="searchYear" type="text" class="form-control" placeholder="Search by Year"></div>                                 
+                <button type="submit" class="btn btn-primary" style="margin-left:5px">Search</button>   
+                <a asp-action="Index" class="btn btn-dark">Back to the full list</a>
+            </form>
+            
         </div>
-    </form>
+        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <div class ="col-1">
+                <a href="/Film/YeniFilm" class="btn btn-primary">New Entry</a>
+            </div>
+        }
+    </div>   
 
-    <div class="dropdown">
-        <br />
-        <button onclick="myFunction()" class="dropbtn" style="margin-right: 5px">Sort</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
-            <a asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
-            <a asp-action="Index" asp-route-sortOrder=@ViewBag.LengthSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by length </a>
-            <a asp-action="Index" asp-route-sortOrder=@ViewBag.ScoreSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by IMDb Score </a>
-            <a asp-action="Index" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
-        </div>
-    </div>
-      
-    @{
-        var prevDisabled = !Model.PreviousPage ? "disabled" : "";
-        var nextDisabled = !Model.NextPage ? "disabled" : "";
-    }
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-dark">First</a>
-
-    <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
-
-    <button class="btn btn-primary">Sayfa: @Model.PageIndex</button>
 
 </div>
 

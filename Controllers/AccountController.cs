@@ -18,6 +18,12 @@ namespace moviesite.Controllers
             this.signInManager = signInManager;
         }
 
+        [HttpGet]
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

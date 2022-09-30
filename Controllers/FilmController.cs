@@ -24,7 +24,7 @@ namespace moviesite.Controllers
         [HttpGet]
         [AllowAnonymous]
 
-        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int searchYear, int? pageNumber, int pageSize = 10)
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int searchYear, int? pageNumber, int pageSize = 25)
         {
 
             ViewData["CurrentFilter"] = searchString;
