@@ -6,6 +6,7 @@ namespace moviesite.Models
 {
     public class AppDbContext : IdentityDbContext
     {
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
                 : base(options)
         {
@@ -13,6 +14,7 @@ namespace moviesite.Models
         }
 
         public DbSet<Film> TBLMOVIES { get; set; }
-        
+        public DbSet<WantToWatch> WantToWatch { get; set; }
+
     }
 }
