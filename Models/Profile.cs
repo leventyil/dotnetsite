@@ -11,10 +11,17 @@ namespace moviesite.Models
         public int Id { get; set; }
     }
 
-    [Keyless]
     public class WantToWatch
     {
-        public int UserId { get; set; }
-        public int MovieId { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public string MovieId { get; set; }
+    }
+
+    public class Watched
+    {
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public string MovieId { get; set; }
     }
 }

@@ -535,3 +535,9 @@ C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\moviesite.pdb
 C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\moviesite.genruntimeconfig.cache
 C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\ref\moviesite.dll
 C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\Razor\Views\Profile\Watchlist.cshtml.g.cs
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\staticwebassets\moviesite.StaticWebAssets.Pack.cache
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\staticwebassets\msbuild.moviesite.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\staticwebassets\msbuild.build.moviesite.props
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.moviesite.props
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.moviesite.props
+C:\Projects\DOTNET\moviebase\obj\Debug\net5.0\Razor\Views\Profile\Watched.cshtml.g.cs

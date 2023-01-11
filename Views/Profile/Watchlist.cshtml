@@ -13,18 +13,20 @@
 
 
 <div class="col-12">
-
-    <div class="row">
+    <div class="row" style="margin-bottom: 10px">
+        <h3>Watchlist</h3>
+    </div>
+    <div class="row">      
         <div class="col-4">
-            <div>
+            <div>              
                 <div class="dropdown">
                     <button onclick="myFunction()" class="btn btn-info dropdown-toggle" style="margin-right: 5px">Sort</button>
                     <div id="myDropdown" class="dropdown-menu">
-                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
-                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
-                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.LengthSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by length </a>
-                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.ScoreSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by IMDb Score </a>
-                        <a class="dropdown-item" asp-action="Index" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
+                        <a class="dropdown-item" asp-action="Watchlist" asp-route-sortOrder=@ViewBag.NameSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by name</a>
+                        <a class="dropdown-item" asp-action="Watchlist" asp-route-sortOrder=@ViewData["YearSortParam"] asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by year </a>
+                        <a class="dropdown-item" asp-action="Watchlist" asp-route-sortOrder=@ViewBag.LengthSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by length </a>
+                        <a class="dropdown-item" asp-action="Watchlist" asp-route-sortOrder=@ViewBag.ScoreSortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by IMDb Score </a>
+                        <a class="dropdown-item" asp-action="Watchlist" asp-route-sortOrder=@ViewBag.Score1SortParam asp-route-currentFilter="@ViewData["CurrentFilter"]"> Sort by Metascore Score </a>
                     </div>
                 </div>
 
@@ -34,14 +36,14 @@
                 }
 
                 <button class="btn btn-primary">Page: @Model.PageIndex</button>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-dark">First</a>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
+                <a asp-action="Watchlist" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex == 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-dark">First</a>
+                <a asp-action="Watchlist" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @prevDisabled">Previous</a>
+                <a asp-action="Watchlist" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn btn-secondary @nextDisabled">Next</a>
             </div>
         </div>
 
         <div class="col-7">
-            <form method="get" asp-action="Index">
+            <form method="get" asp-action="Watchlist">
                 <div style="float:left"><input id="searchString" name="searchString" type="text" placeholder="Search by Name" class="form-control"></div>
                 <div style="float:left"><input id="searchYear" name="searchYear" type="text" class="form-control" placeholder="Search by Year"></div>
                 <button type="submit" class="btn btn-primary" style="margin-left:5px">Search</button>
@@ -88,6 +90,7 @@
                             <a href="/Film/FilmGetir/@x.Id" class="btn btn-success">Update</a>
                             @Html.ActionLink("Delete", "FilmSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?')" })
                         }
+                        <a href="/Proflie/AddToWatced/@x.Id" class="btn btn-primary">Watched</a>
                     </td>
                 </tr>
             }

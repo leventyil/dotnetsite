@@ -74,20 +74,20 @@ namespace moviesite.Controllers
 
 
         
-        public IActionResult Search(string searchName, int searchYear)
-        {
-            var query = from x in c.TBLMOVIES select x;
+        //public IActionResult Search(string searchName, int searchYear)
+        //{
+        //    var query = from x in c.TBLMOVIES select x;
 
-            if (!string.IsNullOrEmpty(searchName))
-            {
-                query = query.Where(x => x.FilmName.Contains(searchName));
-            }
-            if (searchYear != 0)
-            {
-                query = query.Where(x => x.FilmYear == searchYear);
-            }
-            return View(query);
-        }
+        //    if (!string.IsNullOrEmpty(searchName))
+        //    {
+        //        query = query.Where(x => x.FilmName.Contains(searchName));
+        //    }
+        //    if (searchYear != 0)
+        //    {
+        //        query = query.Where(x => x.FilmYear == searchYear);
+        //    }
+        //    return View(query);
+        //}
 
         
         public IActionResult FilmSil(string id)

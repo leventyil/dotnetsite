@@ -15,6 +15,7 @@ namespace moviesite.Models
 
         public DbSet<Film> TBLMOVIES { get; set; }
         public DbSet<WantToWatch> WantToWatch { get; set; }
+        public DbSet<Watched> Watched { get; set; }
 
     }
 }
