@@ -6,6 +6,6 @@ With using admin panel you can add, delete or update a movie
 
 "IN PROGRESS" Edit your personal info in your profile 
 
-<img src="https://i.imgur.com/096zbxI.png" width="800" height="440">
+<img src="https://imgur.com/a/6O2Tz1x" width="800" height="440">
 
  
