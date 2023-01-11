@@ -9,4 +9,3 @@ With using admin panel you can add, delete or update a movie
 <img src="https://i.imgur.com/096zbxI.png" width="800" height="440">
 
  
-
