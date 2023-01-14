@@ -90,8 +90,9 @@
                             <a href="/Film/FilmGetir/@x.Id" class="btn btn-success">Update</a>
                             @Html.ActionLink("Delete", "FilmSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?')" })
                         }
+
                         <a href="/Profile/AddToWatchlist/@x.Id" class="btn btn-primary">Want to Watch</a>
-                        <a href="/Proflie/AddToWatced/@x.Id" class="btn btn-primary">Watched</a>
+                        <a href="/Profile/AddToWatched/@x.Id" class="btn btn-primary">Watched</a>
                     </td>
                 </tr>
             }

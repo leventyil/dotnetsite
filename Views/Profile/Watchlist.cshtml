@@ -1,4 +1,4 @@
-﻿@inject SignInManager<IdentityUser> SignInManager;
+﻿@inject SignInManager<IdentityUser> SignInManager
 @model PaginatedList<moviesite.Models.Film>
 @using X.PagedList.Mvc
 @using X.PagedList
@@ -90,7 +90,8 @@
                             <a href="/Film/FilmGetir/@x.Id" class="btn btn-success">Update</a>
                             @Html.ActionLink("Delete", "FilmSil", new { id = x.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Are you sure?')" })
                         }
-                        <a href="/Proflie/AddToWatced/@x.Id" class="btn btn-primary">Watched</a>
+                        <a href="/Profile/AddToWatched/@x.Id" class="btn btn-primary">Watched</a>
+                        <a href="/Profile/RemoveFromWatchlist/@x.Id" class="btn btn-primary">Remove</a>
                     </td>
                 </tr>
             }

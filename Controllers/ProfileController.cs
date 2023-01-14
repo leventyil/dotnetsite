@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using moviesite.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Xamarin.Forms;
 
 namespace moviesite.Controllers
 {
@@ -170,10 +174,55 @@ namespace moviesite.Controllers
                 UserId = user.Id,
                 MovieId = id
             };
-            c.Watched.Add(film);
+
+            c.Watched.Add(film);              
             c.SaveChanges();
             return RedirectToAction("Watched");
-
         }
+
+        public async Task<IActionResult> RemoveFromWatchlist(string id)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            WantToWatch film = new()
+            {
+                UserId = user.Id,
+                MovieId = id
+            };
+
+            var item = (from z in c.WantToWatch
+                        where z.UserId == film.UserId && z.MovieId == film.MovieId
+                        select z).ToList();
+
+            foreach (var z in item)
+            {
+                c.WantToWatch.Remove(z);
+            }
+
+            c.SaveChanges();
+            return RedirectToAction("Watchlist");
+        }
+
+        public async Task<IActionResult> RemoveFromWatched(string id)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            Watched film = new()
+            {
+                UserId = user.Id,
+                MovieId = id
+            };
+
+            var item = (from z in c.Watched
+                        where z.UserId == film.UserId && z.MovieId == film.MovieId
+                        select z).ToList();
+
+            foreach(var  z in item)
+            {
+                c.Watched.Remove(z);
+            }
+                
+            c.SaveChanges();
+            return RedirectToAction("Watched");
+        }
+
     }
 }
