@@ -52,14 +52,6 @@ namespace moviesite.Controllers
             var table = c.WantToWatch.Where(x => x.UserId == user.Id);
             var query = c.TBLMOVIES.Join(c.WantToWatch, x => x.Id, y => y.MovieId, (x, y) => x);
 
-            //var query = from t1 in c.TBLMOVIES
-            //             join t2 in table
-            //             on t1.Id equals t2.MovieId.ToString()
-            //             select new { t1.Id, t1.FilmName, t1.FilmYear, t1.FilmLength, t1.FilmScore, t1.FilmScoreTwo };
-
-
-            //var query = from x in c.TBLMOVIES select x;
-
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -116,14 +108,6 @@ namespace moviesite.Controllers
             var table = c.Watched.Where(x => x.UserId == user.Id);
             var query = c.TBLMOVIES.Join(c.Watched, x => x.Id, y => y.MovieId, (x, y) => x);
 
-            //var query = from t1 in c.TBLMOVIES
-            //             join t2 in table
-            //             on t1.Id equals t2.MovieId.ToString()
-            //             select new { t1.Id, t1.FilmName, t1.FilmYear, t1.FilmLength, t1.FilmScore, t1.FilmScoreTwo };
-
-
-            //var query = from x in c.TBLMOVIES select x;
-
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -160,6 +144,16 @@ namespace moviesite.Controllers
                 UserId = user.Id,
                 MovieId = id
             };
+
+            var item = (from z in c.WantToWatch
+                        where z.UserId == film.UserId && z.MovieId == film.MovieId
+                        select z).ToList();
+
+            foreach (var z in item)
+            {
+                return RedirectToAction("Watchlist");
+            }
+
             c.WantToWatch.Add(film);
             c.SaveChanges();
             return RedirectToAction("Watchlist");
@@ -175,7 +169,16 @@ namespace moviesite.Controllers
                 MovieId = id
             };
 
-            c.Watched.Add(film);              
+            var item = (from z in c.Watched
+                       where z.UserId == film.UserId && z.MovieId == film.MovieId
+                       select z).ToList();
+
+            foreach(var z in item)
+            {
+                return RedirectToAction("Watched");               
+            }
+
+            c.Watched.Add(film);
             c.SaveChanges();
             return RedirectToAction("Watched");
         }
