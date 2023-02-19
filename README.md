@@ -1,10 +1,12 @@
-This is a .net mvc core learning project for me  
-It is like a very basic version of letterboxd  
-With using admin panel you can add, delete or update a movie  
+.NET Core MVC project
+Used MsSQL for database, LINQ and Entity Framework for queries and database management.
+Used AspNetCore.Identity library for user and role management, storing passwords etc.
+Used PagedList library for sorting, searching, paging and listing movies.
 
-"IN PROGRESS" You can register, login and add movies to your watched or plan to watch list and favorites
+Admin can add, delete or update movies.
+Users can add movies to their watchlist or mark as watched, search movies using name or year.
 
-"IN PROGRESS" Edit your personal info in your profile 
+"IN PROGRESS" Users can edit their personal profile 
 
 <img src="https://i.imgur.com/Apyek7q.png" width="800" height="440">
 
